@@ -30,8 +30,8 @@ RUN docker-php-ext-configure zip --with-libzip
 	# tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl zend_test zip
 
 # Install extensions
-RUN	docker-php-ext-install \
-	gd \
+RUN docker-php-ext-install \
+    gd \
 	pdo_pgsql \
 	pdo_mysql \
 	zip 
@@ -40,6 +40,7 @@ RUN	docker-php-ext-install \
 RUN wget -O - https://getcomposer.org/installer | php && \
 	mv composer.phar /usr/local/bin/composer
 
+ENTRYPOINT ["sh"]
 
 
 
